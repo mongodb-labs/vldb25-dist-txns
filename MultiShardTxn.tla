@@ -109,7 +109,7 @@ VARIABLE txnSnapshots
 VARIABLE txnStatus
 VARIABLE stableTs, oldestTs, allDurableTs
 
-vars == << shardTxns, rInCommit, shardTxnReqs, aborted, log, commitIndex, rtxn, txnSnapshots, ops, shardOps, rParticipants, coordInfo, msgsPrepare, msgsVoteCommit, msgsAbort, coordCommitVotes, catalog, msgsCommit, rTxnReadTs, shardPreparedTxns >>
+vars == << shardTxns, rInCommit, shardTxnReqs, aborted, log, commitIndex, rtxn, txnSnapshots, ops, shardOps, rParticipants, coordInfo, msgsPrepare, msgsVoteCommit, msgsAbort, coordCommitVotes, catalog, msgsCommit, rTxnReadTs, shardPreparedTxns, rCatalog, txnStatus, stableTs, oldestTs, allDurableTs >>
 varsRouter == << rtxn, rInCommit, rTxnReadTs, rParticipants>>
 varsNetwork == << msgsPrepare, msgsVoteCommit, msgsAbort, msgsCommit >>
 
