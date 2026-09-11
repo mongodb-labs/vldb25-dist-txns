@@ -12,3 +12,6 @@ $tlc -workers $workers -deadlock -config models/MCMultiShardTxn_local_with_prepa
 
 # Check config for snapshot isolation.
 $tlc -workers $workers -deadlock -config models/MCMultiShardTxn_snapshot.cfg MCMultiShardTxn
+
+# Check that different routers cannot start the same transaction.
+$tlc -workers $workers -deadlock -config models/MCMultiShardTxn_two_routers_snapshot.cfg MCMultiShardTxnRouterAffinity

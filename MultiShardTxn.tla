@@ -237,7 +237,7 @@ RouterTxnStart(r, tid, readTs) ==
     \* This is a generalized version of what we do in practice, which will be a
     \* best effort guess at read timestamp to select will be maintained on a
     \* router based on previous responses from commands.
-    /\ rTxnReadTs[r][tid] = NoValue
+    /\ \A other \in Router : rTxnReadTs[other][tid] = NoValue
     \* Non snapshot reads don't use a read timestamp.
     /\ rTxnReadTs' = [rTxnReadTs EXCEPT ![r][tid] = IF RC = "snapshot" THEN readTs ELSE 0]
     /\ UNCHANGED << rCatalog, shardTxns, rParticipants, shardTxnReqs, rtxn,  aborted, log, commitIndex, txnSnapshots, ops,coordInfo, coordCommitVotes, catalog, shardPreparedTxns, rInCommit, shardOps, varsNetwork, txnStatus, stableTs, oldestTs, allDurableTs >>
